@@ -1,0 +1,162 @@
+@CHARSET "UTF-8";
+
+body {
+	background: #f1f1f1;
+	position: relative;
+}
+
+.title_icon {
+	display: inline-block;
+	width: 200px;
+	height: 80px;
+	line-height: 80px;
+	background: #f1f1f1;
+	cursor: pointer;
+	font-family: "arial narrow";
+	font-size: 25pt;
+	font-weight: 800;
+	color: #EA6F5A;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+}
+
+.login_form {
+	width: 410px;
+	height: 410px;
+	position: absolute;
+	top: 100px;
+	left: 477px;
+	background: #FFFFFF;
+	box-shadow: 0 0 8px #d3d3d3;
+	-webkit-box-shadow: 0 0 8px #d3d3d3;
+	-moz-box-shadow: 0 0 8px #d3d3d3;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.login_form .title {
+	display: block;
+	width: 410px;
+	height: 120px;
+}
+
+.login_form .title .normal-title {
+	text-align: center;
+}
+
+.login_form .title .normal-title a,.login_form .title .normal-title b {
+	text-decoration: none;
+	color: #969696;
+	font-size: 14pt;
+	font-family: "微软雅黑";
+	font-weight: 500;
+}
+
+.login_form .title .normal-title a {
+	display: inline-block;
+	width: 60px;
+	height: 50px;
+	line-height: 50px;
+	margin-top: 40px;
+}
+
+.login_form .title .normal-title .active {
+	color: #EA6F5A;
+	font-size: 15pt;
+	font-weight: 600;
+	border-bottom: 3px solid #EA6F5A;
+}
+
+.login_form figure {
+	width: 300px;
+	height: 102px;
+	margin-left: 50px;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.login_form .input-prepend {
+	width: 300px;
+	height: 50px;
+}
+
+.login_form .input-prepend img {
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+
+.login_form .input-prepend input {
+	display: inline-block;
+	border: none;
+	width: 250px;
+	line-height: 50px;
+	font-family: "微软雅黑";
+	text-indent: 0.5em;
+}
+
+.login_form .input-prepend input:focus { /*input框的外发光去掉*/
+	outline: 0 !important;
+}
+
+.login_form .restyle {
+	border-bottom: 1px solid #ccc;
+}
+
+.login_form .remenber_forget {
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	font-family: "微软雅黑";
+	color: #a9a9a9;
+	font-size: 11pt;
+	position: relative;
+}
+
+.login_form .remenber_forget span {
+	display: inline-block;
+	text-indent: 0.5em;
+}
+
+.login_form .remenber_forget a {
+	text-decoration: none;
+	color: #a9a9a9;
+	display: inline-block;
+	width: 70px;
+	position: absolute;
+	right: 0px;
+}
+
+.login_form .remenber_forget a:hover {
+	color: #2C2C2C;
+}
+
+.login_form .login_btn {
+	display: block;
+	width: 300px;
+	height: 50px;
+	background: #187CB7;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 50px;
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	font-size: 15pt;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.errorMsg {
+	display: block;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: rgb(228, 57, 60);
+	margin-top: 9px;
+	margin-left: 50px;
+}

@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+body {
+	background: #f1f1f1;
+	position: relative;
+}
+
+.title_icon {
+	display: inline-block;
+	width: 200px;
+	height: 80px;
+	line-height: 80px;
+	background: #f1f1f1;
+	cursor: pointer;
+	font-family: "arial narrow";
+	font-size: 25pt;
+	font-weight: 800;
+	color: #EA6F5A;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+}
+.msg{
+	width: 900px;
+	height: 100px;
+	position:absolute;
+	left: 233px;
+	top: 200px;
+	text-align: center;
+}
+.msg span {
+	font-size: 20px;
+	color: #000;
+	font-family: "微软雅黑";
+}
+.msg span a{
+	color: #f30;
+	cursor: pointer;
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="shortcut icon" href="img/icon.ico"/>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/public.css"/>
+	<style>
+		body{
+			background: #f1f1f1;
+			position: relative;
+		}
+		.title_icon{
+			display: inline-block;
+			width: 200px;
+			height: 80px;
+			line-height: 80px;
+			background: #f1f1f1;
+			cursor: pointer;
+			font-family: "arial narrow";
+			font-size: 25pt;
+			font-weight: 800;
+			color: #EA6F5A;		
+			position: absolute;
+			top: 50px;
+			left: 50px;	
+		}
+		.regist_form{
+			width: 410px;
+			height: 450px;
+			position: absolute;
+			top: 100px;
+			left: 477px;
+			background: #FFFFFF;
+			box-shadow: 0 0 8px #d3d3d3;
+			-webkit-box-shadow: 0 0 8px #d3d3d3;
+			-moz-box-shadow: 0 0 8px #d3d3d3;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+		.regist_form .title{
+			display: block;
+			width: 410px;
+			height: 120px;
+		}
+		.regist_form .title .normal-title{
+			text-align: center;
+		}
+		.regist_form .title .normal-title a,
+		.regist_form .title .normal-title b{
+			text-decoration: none;
+			color: #969696;
+			font-size: 14pt;
+			font-family: "微软雅黑";
+			font-weight: 500;
+		}
+		.regist_form .title .normal-title a{
+			display: inline-block;
+			width: 60px;
+			height: 50px;
+			line-height: 50px;
+			margin-top: 40px;
+		}
+		.regist_form .title .normal-title .active{
+			color:#EA6F5A;
+			font-size: 15pt;
+			font-weight: 600;
+			border-bottom: 3px solid #EA6F5A;
+		}
+		.regist_form figure{
+			width: 300px;
+			height: 153px;
+			margin-left: 50px;
+			border: 1px solid #ccc;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+		.regist_form .tel{
+			border-bottom: 1px solid #ccc;
+		}
+		.regist_form .input-prepend{
+			width: 300px;
+			height: 50px;
+		}
+		.regist_form .input-prepend img{
+			float: left;
+			width: 50px;
+			height: 50px;
+		}
+		.regist_form .input-prepend input{
+			display: inline-block;
+			border: none;
+			width: 250px;
+			line-height: 50px;
+			font-family: "微软雅黑";
+			text-indent: 0.5em;
+		}
+		.regist_form .input-prepend input:focus{/*input框的外发光去掉*/
+			outline:0 !important;
+		}
+		.regist_form .restyle{
+			border-bottom: 1px solid #ccc;
+		}
+		.regist_form .remenber_forget{
+			width: 300px;
+			height: 50px;
+			line-height: 50px;
+			font-family: "微软雅黑";
+			color: #a9a9a9;
+			font-size: 11pt;
+			position: relative;
+		}
+		.regist_form .remenber_forget span{
+			display: inline-block;
+			text-indent: 0.5em;
+		}
+		.regist_form .remenber_forget a{
+			text-decoration: none;
+			color: #a9a9a9;
+			display: inline-block;
+			width: 70px;
+			position: absolute;
+			right: 0px;
+		}
+		.regist_form .remenber_forget a:hover{
+			color: #2C2C2C;
+		}
+		.regist_form .regist_btn{
+			display: block;
+			width: 300px;
+			height: 50px;
+			background: #42c02e;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 50px;
+			color: #FFFFFF;
+			font-family: "微软雅黑";
+			font-size: 15pt;
+			font-weight: 500;
+			margin-top:30px ;
+			cursor: pointer;
+		}
+		.regist_form figure .sign-up-msg{
+			display: block;
+			width: 250px;
+			margin: 10px auto;
+			line-height: 20px;
+			text-align: center;
+			color: #969696;
+			font-size: 8pt;
+		}
+		.regist_form figure .sign-up-msg a{
+			text-decoration: none;
+			color: #57aee3;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.10.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('.login_form .title .normal-title a').hover(function(){
+				if($(this).hasClass('active')){
+					return false;
+				}else{
+					$(this).css("border-bottom","3px solid #EA6F5A");
+				}
+			},function(){
+				if($(this).hasClass('active')){
+					return false;
+				}else{
+					$(this).css("border-bottom","none");
+				}
+			}).click(function(){
+				if($(this).hasClass('active')){
+					return false;
+				}else{
+					$(this).siblings('a').removeClass('active').css("border-bottom","none");
+					$(this).addClass('active');
+				}
+			});
+		});
+	</script>
+	<body>
+		<span class="title_icon">PuppyHouse</span>
+		<form accept-charset="utf-8" action="#" method="post" class="regist_form">
+			<h4 class="title">
+  				<div class="normal-title">
+	   				<a class="" href="sign_in.html">登录</a>
+	    			<b>·</b>
+	    			<a id="js-sign-up-btn" class="active" href="sign_up.html">注册</a>
+  				</div>
+			</h4>
+			<figure>
+				<div class="input-prepend restyle js-normal ">
+					<i class="iconfont ic-user"></i>
+					<img src="images/user17.png" />
+	      			<input placeholder="你的昵称" type="text" name="session[alis]" id="session_alis" />
+	    		</div>
+				<div class="input-prepend tel">
+					<i class="iconfont ic-password"></i>
+					<img src="images/user17.png" />
+	      			<input placeholder="手机号" type="password" name="session[email_or_mobile_number]" id="session_email_or_mobile_number" />
+	    		</div>
+	    		<div class="input-prepend">
+					<i class="iconfont ic-password"></i>
+					<img src="images/user17.png" />
+	      			<input placeholder="密码" type="password" name="session[password]" id="session_password" />
+	    		</div>
+	    		<span class="regist_btn">注册</span>
+	    		<p class="sign-up-msg">点击 “注册” 即表示您同意并愿意遵守简书<br> <a target="_blank" href="http://www.jianshu.com/p/c44d171298ce">用户协议</a> 和 <a target="_blank" href="http://www.jianshu.com/p/2ov8x3">隐私政策</a> 。</p>
+	    	</figure>
+		</form>
+	</body>
+</html>

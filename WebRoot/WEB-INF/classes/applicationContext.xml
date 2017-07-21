@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"  
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans	
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd	 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/jee 
+	http://www.springframework.org/schema/jee/spring-jee-2.0.xsd">
+
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"  destroy-method="close">
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/igo"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="root"></property>
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="minPoolSize" value="5"> </property>
+		<property name="maxPoolSize" value="30"></property>
+		<property name="initialPoolSize" value="10"> </property>
+		<property name="maxIdleTime" value="60"></property>
+		<property name="acquireIncrement" value="5"> </property>
+		<property name="maxStatements" value="0"></property>
+		<property name="idleConnectionTestPeriod" value="60"></property>
+		<property name="acquireRetryAttempts" value="30"></property>
+		<property name="breakAfterAcquireFailure" value="true"></property>
+		<property name="testConnectionOnCheckout" value="false"></property>
+		 
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.autoReconnect">true</prop> 
+				<prop key="hibernate.generate_statistics">true</prop> 
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="hibernate.show_sql">true</prop>      
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/igo/entity/Admin.hbm.xml</value>
+				<value>com/igo/entity/Dogs.hbm.xml</value>
+				<value>com/igo/entity/Adopt.hbm.xml</value>
+				<value>com/igo/entity/Users.hbm.xml</value>
+				<value>com/igo/entity/Types.hbm.xml</value></list>
+		</property></bean>
+		
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="userDAO" class="com.igo.dao.impl.UserDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="userBiz" class="com.igo.biz.Impl.UserBizImpl">
+		<property name="userDAO" ref="userDAO"/>
+	</bean>
+	
+	<bean id="userAction" class="com.igo.action.UserAction" scope="prototype">
+		<property name="userBiz" ref="userBiz"/>
+	</bean>
+	
+	<bean id="dogDAO" class="com.igo.dao.impl.DogDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="dogBiz" class="com.igo.biz.Impl.DogBizImpl">
+		<property name="dogDAO" ref="dogDAO"/>
+	</bean>
+	
+	<bean id="dogAction" class="com.igo.action.DogAction" scope="prototype">
+		<property name="dogBiz" ref="dogBiz"/>
+	</bean>
+	
+	<bean id="adminDao" class="com.igo.dao.impl.AdminDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="adminBiz" class="com.igo.biz.Impl.AdminBizImpl">
+		<property name="adminDao" ref="adminDao"></property>
+	</bean>
+	
+	<bean id="adminAction" class="com.igo.action.AdminAction" scope="prototype">
+		<property name="adminBiz" ref="adminBiz"></property>
+		<property name="userBiz" ref="userBiz"></property>
+		<property name="dogBiz" ref="dogBiz"></property>
+		<property name="adoptBiz" ref="adoptBiz"></property>
+	</bean>
+	
+	<bean id="adoptDao" class="com.igo.dao.impl.AdoptDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="adoptBiz" class="com.igo.biz.Impl.AdoptBizImpl">
+		<property name="adoptDao" ref="adoptDao"></property>
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">	 
+	  <tx:attributes>	 
+	  	<tx:method name="*" propagation="REQUIRED" /> 
+	  </tx:attributes>
+	</tx:advice>
+	
+    <!--定义切面，并将事务通知和切面组合（定义哪些方法应用事务规则） -->
+    <aop:config>
+        <!-- 对com.news.biz包下的所有类的所有方法都应用事务规则 -->
+    	<aop:pointcut id="bizMethods" expression="execution(* com.igo.dao.*.*(..))" /> 
+    	<!--  将事务通知和切面组合   --> 
+    	<aop:advisor advice-ref="txAdvice" pointcut-ref="bizMethods" /> 
+    </aop:config>
+  
+	</beans>

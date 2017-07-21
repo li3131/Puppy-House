@@ -1,0 +1,273 @@
+@CHARSET "UTF-8";
+* {
+	margin:0;
+	padding:0;
+}
+img {
+	border:0;
+}
+body  {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background: #000000;
+	color: #caddf8;
+}
+#container {
+	width: 900px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+} 
+#header {
+	height:189px;
+	width:900px;
+} 
+#title h1 {
+	background:url(/PuppyHouse/images/logo.jpg) no-repeat left top;
+	margin:30px 0;
+	padding:5px 0 10px 90px;
+	color:#FFFFFF;
+	font-size:48px;
+}
+#title{
+    position: relative;
+    height:100px;
+    width:900px;
+}
+.loginform{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    height:70px;
+    width:200px;
+}
+.loginform span{
+	display: block;
+	font-size: 14px;
+	color: #fff;
+	font-family: "Microsoft Yahei";
+}
+.loginform .s1{
+	padding-top: 20px;
+	padding-left: 110px;
+}
+.loginform .s2{
+	padding-top: 20px;
+	padding-left: 40px;
+}
+.loginform a{
+	text-decoration: none;
+	color: rgb(228, 57, 60);
+}
+.loginform a:HOVER{
+	color: rgb(228, 221, 60);
+}
+#sidebar1 {
+	width: 900px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	border: 1px solid #a80808;
+	background: #a80808;
+	box-shadow: 0 0 8px #d3d3d3;
+	-webkit-box-shadow: 0 0 8px #d3d3d3;
+	-moz-box-shadow: 0 0 8px #d3d3d3;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 10px;
+}
+#sidebar1 p {
+	margin:20px;
+}
+#sidebar1 table {
+	background-color: #30A55D;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+#sidebar1 table td{
+	padding: 5px 5px 0 5px;
+}
+#t2{
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	width: 600px;
+	font-size: 13px;
+	font-family: "Microsoft Yahei";
+}
+#t2 a{
+	text-decoration: none;
+}
+#sidebar1 table tr .itd1 {
+	position: relative;
+	display: block;
+	float: left;
+	width: 148px;
+	height: 126px;
+	margin: 5px 5px;
+	cursor: pointer;
+}
+#sidebar1 table tr .itd2 span{
+	font-family:"Microsoft Yahei";
+	font-size: 15px;
+	color:#000;
+}
+.itd2{
+	border-bottom: 1px solid #a80808;
+}
+#sidebar1 table tr td img{
+	z-index: 5;
+}
+#sidebar1 table tr td p{
+	margin:0px;
+	display: none;
+	position: absolute;
+	top: 0px;
+	width: 148px;
+	height: 126px;
+	line-height: 126px;
+	text-align: center;
+	z-index: 10;
+	font-family:"Microsoft Yahei" ;
+	color: #fff;
+	font-size: 15px;
+}
+#sidebar1 h1, #mainContent h1, #about h1 {
+	margin:5px 20px;
+	font-size:36px;
+	color:#caddf8;
+}
+#sidebar1 span, #about span {
+	font-size:36px;
+	color:#527ecf;
+}
+#sidebar1 b {
+	color:#ecbc7c;
+}
+#sidebar1 a {
+	color:#ecbc7c;
+	font-weight:bold;
+}
+#sidebar1 .puppyPic {
+	float:left;
+	margin:0 15px 10px 0;
+}
+#mainContent { 
+	height:50px;
+	width:900px;
+}
+#search_input{
+	width: 650px;
+    height: 23px;
+    line-height: 23px;
+    float: left;
+    font-size: 16px;
+    padding: 5px 8px 5px 10px;
+    margin: 0;
+    border: 2px solid #a80808;
+    border-right: 0;
+    font-family: "Microsoft Yahei";
+	-webkit-border-top-left-radius:8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius:8px;
+	outline:none;
+}
+#search_button{
+	height: 37px;
+    width: 230px;
+    color: #FFF;
+    font-size: 18px;
+    border: 2px solid #a80808;
+    background: #a80808;
+    cursor: pointer;
+    font-family: "Microsoft Yahei";
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius:8px;
+} 
+#footer {
+	background:#171d26;
+	height:81px;
+}
+.ftt {
+	float:left;
+}
+.rss {
+	float:right;
+}
+.copyright {
+	text-align:center;
+	padding-top:25px;
+}
+.copyright a {
+	color:#c10d0d;
+} 
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+#about {
+	padding:20px 0;
+}
+#about p {
+	margin:5px 20px;
+}
+/*begin main menu*/
+#navcontainer {
+	background:url(/PuppyHouse/images/menuBackground.jpg) no-repeat left top;
+	width:900px;
+	height:40px;
+	text-align:center;
+	padding-top:6px;
+	font-family: "Microsoft Yahei";
+}
+ul#navlist {
+	margin-left: 0;
+	padding-left: 0;
+	white-space: nowrap;
+}
+
+#navlist li {
+	display: inline;
+	list-style-type: none;
+}
+
+#navlist a { 
+	padding: 3px 10px; 
+	color:#ffffff; 
+	font-size:24px; 
+	padding-left:30px; 
+}
+
+#navlist a:link, #navlist a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+#navlist a:hover {
+	color: #ecbc7c;
+	text-decoration: none;
+	background:url(/PuppyHouse/images/activeButton.jpg) no-repeat left 3px;
+	padding-left:30px;
+}
+#navlist #active a {
+	color: #ecbc7c;
+	text-decoration: none;
+	background:url(/PuppyHouse/images/activeButton.jpg) no-repeat left 3px;
+	padding-left:30px;
+}
+
+/*end main menu*/
+/* begin border corners*/
+.t {background: #283140 url(/PuppyHouse/images/dot.gif) 0 0 repeat-x;}
+.b {background:url(/PuppyHouse/images/dot.gif) 0 100% repeat-x}
+.l {background:url(/PuppyHouse/images/dot.gif) 0 0 repeat-y}
+.r {background:url(/PuppyHouse/images/dot.gif) 100% 0 repeat-y}
+.bl {background:url(/PuppyHouse/images/bl.gif) 0 100% no-repeat}
+.br {background:url(/PuppyHouse/images/br.gif) 100% 100% no-repeat}
+.tl {background:url(/PuppyHouse/images/tl.gif) 0 0 no-repeat}
+.tr {background:url(/PuppyHouse/images/tr.gif) 100% 0 no-repeat; padding:1px 20px} 
+/* end border corners*/

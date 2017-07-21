@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.objectFactory" value="spring"/>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="default"  namespace="/" extends="struts-default">
+		
+		<action name="user_*" class="com.igo.action.UserAction" method="user_{1}">
+			<result name="login_success">/index.jsp</result>
+			<result name="login_failure">/login.jsp</result>
+			<result name="logout">/index.jsp</result>
+		</action>
+		
+		<action name="register" class="com.igo.action.UserAction" method="register">
+			<result name="reg_success">/registerSuccess.jsp</result>
+			<result name="reg_failure">/register.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+		
+		<action name="toShowAdopt" class="com.igo.action.DogAction" method="toShowAdopt">
+			<result name="toShowAdopt">/adoptDetail.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		
+		<action name="addAdopt" class="com.igo.action.DogAction" method="addAdopt">
+			<param name="savePath">/dogimages</param>
+			<result name="success">/index.jsp</result>
+		<!--  	<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedTypes">
+					image/jpg,image/gif,image/png
+				</param>
+			</interceptor-ref>
+		-->
+		</action>
+		<action name="toUpdateInfo" class="com.igo.action.UserAction" method="toUpdateInfo">
+			<result name="toUpdateInfo">/updateinfo.jsp</result>
+		</action>
+		<action name="modify" class="com.igo.action.UserAction" method="modify">
+			<result name="modify">/main.jsp</result>
+		</action>
+		<action name="toShowDetail" class="com.igo.action.DogAction" method="toShowDetail">
+			<result name="showdetail">/detail.jsp</result>
+		</action>
+		<action name="toShowAdoptDetail" class="com.igo.action.DogAction" method="toShowAdoptDetail">
+			<result name="showadoptdetail">/releasedetail.jsp</result>
+		</action>
+	</package>
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="login" class="com.igo.action.AdminAction" method="login">
+			<result name="success">/admin/index.jsp</result>
+			<result name="input">/admin/login.jsp</result>
+		</action>
+		<action name="toShowDogs" class="com.igo.action.AdminAction" method="toShowDogs">
+			<result name="toshowdogs">/admin/showdog.jsp</result>
+		</action>
+		<action name="toModifyDog" class="com.igo.action.AdminAction" method="toModifyDog">
+			<result name="tomodifydog">/admin/modifydog.jsp</result>
+		</action>
+		<action name="doModifyDog" class="com.igo.action.AdminAction" method="doModifyDog">
+			<result name="domodifydog" type="redirectAction">toShowDogs</result>
+		</action>
+		<action name="dogDetail" class="com.igo.action.AdminAction" method="dogDetail">
+			<result name="dogdetail">/admin/dogdetail.jsp</result>
+		</action>
+		<action name="toShowUsers" class="com.igo.action.AdminAction" method="toShowUsers">
+			<result name="toshowusers">/admin/showuser.jsp</result>
+		</action>
+		<action name="deleteUser" class="com.igo.action.AdminAction" method="deleteUser">
+			<result name="deleteuser" type="redirectAction">toShowUsers</result>
+		</action>
+		<action name="toModifyUser" class="com.igo.action.AdminAction" method="toModifyUser">
+			<result name="tomodifyuser">/admin/modifyuser.jsp</result>
+		</action>
+		<action name="doModifyUser" class="com.igo.action.AdminAction" method="doModifyUser">
+			<result name="modify" type="redirectAction">toShowUsers</result>
+		</action>
+		<action name="toShowAdopt" class="com.igo.action.AdminAction" method="toShowAdopt">
+			<result name="toshowadopt">/admin/showadopt.jsp</result>
+		</action>
+		<action name="logout" class="com.igo.action.AdminAction" method="logout">
+			<result name="logout" type="redirect">/admin/login.jsp</result>
+		</action>
+	</package>
+</struts>    
