@@ -28,6 +28,9 @@
         <property name="address" type="java.lang.String">
             <column name="Address" length="50" not-null="true" />
         </property>
+        <property name="createtime" type="java.lang.String">
+            <column name="createtime" length="50" not-null="true" />
+        </property>
         <set name="adopts" inverse="true">
             <key>
                 <column name="UId" not-null="true" />

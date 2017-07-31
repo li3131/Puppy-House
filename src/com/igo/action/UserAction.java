@@ -63,11 +63,9 @@ public class UserAction extends ActionSupport {
 		Users condition = new Users();
 		condition.setLoginName(LoginName);
 		condition.setLoginPwd(LoginPwd);
-		// System.out.println(condition.toString());
 		list = userBiz.search(condition);
-		if (list.size() > 0) {
+		if (list != null && list.size() > 0) {
 			session.put("user", list.get(0));
-			// System.out.println(session.get("user").toString());
 			return "login_success";
 		} else {
 			this.addFieldError("LoginError", "用户名或者密码错误，请重新登录！");

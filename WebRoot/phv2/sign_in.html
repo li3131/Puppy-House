@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="shortcut icon" href="../images/icon.ico"/>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="css/sign_in.css"/>
+	<script type="text/javascript" src="../js/jquery-1.10.0.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('.login_form .title .normal-title a').hover(function(){
+				if($(this).hasClass('active')){
+					return false;
+				}else{
+					$(this).css("border-bottom","3px solid #EA6F5A");
+				}
+			},function(){
+				if($(this).hasClass('active')){
+					return false;
+				}else{
+					$(this).css("border-bottom","none");
+				}
+			}).click(function(){
+				if($(this).hasClass('active')){
+					return false;
+				}else{
+					$(this).siblings('a').removeClass('active').css("border-bottom","none");
+					$(this).addClass('active');
+				}
+			});
+		});
+	</script>
+	<body>
+		<span class="title_icon">PuppyHouse</span>
+		<form accept-charset="utf-8" action="user_Login" method="post" class="login_form">
+			<h4 class="title">
+  				<div class="normal-title">
+	   				<a class="active" href="sign_in.html">登录</a>
+	    			<b>·</b>
+	    			<a id="js-sign-up-btn" class="" href="sign_up.html">注册</a>
+  				</div>
+			</h4>
+			<figure>
+				<div class="input-prepend restyle js-normal ">
+					<i class="iconfont ic-user"></i>
+					<img src="../images/user17.png" />
+	      			<input placeholder="手机号或邮箱" type="text" name="LoginName" id="session_email_or_mobile_number" />
+	    		</div>
+				<div class="input-prepend">
+					<i class="iconfont ic-password"></i>
+					<img src="../images/user17.png" />
+	      			<input placeholder="密码" type="password" name="LoginPwd" id="session_password" autocomplete="new-password"/>
+	    		</div>
+	    		<div class="remenber_forget">
+	    			<input type="checkbox" value="true" checked="checked" name="session[remember_me]" id="session_remember_me" /><span>记住我</span>
+	    			<a class="" data-toggle="dropdown" href="">忘记密码?</a>
+	    		</div>
+	    		<input type="submit" value="登录" class="login_btn" />
+	    	</figure>
+		</form>
+	</body>
+</html>

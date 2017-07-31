@@ -37,7 +37,7 @@
             </div>
 			<div id="headerPic">
 				<ul style="color: #FFDEAD;font-family: '楷体'">
-					<li class="li1">狗狗是我们的朋友，它们十分的忠诚</li>
+					<li class="li1">Dog is ours friends.</li>
 					<li class="li2">人一生可能有很多宠物，但是狗狗一生只有一个主人</li>
 					<li class="li3">让我们一起去帮助这些无家可归的狗狗们，帮助它们找到一个家</li>
 				</ul>

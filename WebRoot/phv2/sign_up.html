@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="shortcut icon" href="../images/icon.ico"/>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="css/sign_up.css"/>
+	<script type="text/javascript" src="../js/jquery-1.10.0.js" ></script>
+	<script type="text/javascript" src="js/funcJs/sign_up.js"></script>
+	<body>
+		<span class="title_icon">PuppyHouse</span>
+		<form accept-charset="utf-8" action="#" method="post" class="regist_form">
+			<h4 class="title">
+  				<div class="normal-title">
+	   				<a class="" href="sign_in.html">登录</a>
+	    			<b>·</b>
+	    			<a id="js-sign-up-btn" class="active" href="sign_up.html">注册</a>
+  				</div>
+			</h4>
+			<figure>
+				<div class="input-prepend restyle js-normal ">
+					<i class="iconfont ic-user"></i>
+					<img src="../images/user17.png" />
+	      			<input placeholder="真实姓名" type="text" name="trueName" id="trueName" />
+	      			<span style="display: none"></span>
+	    		</div>
+				<div class="input-prepend tel">
+					<i class="iconfont ic-password"></i>
+					<img src="../images/user17.png" />
+	      			<input placeholder="用户名" type="text" name="loginName" id="loginName"/>
+	      			<span  id="lnExsit">地方士大夫电风扇都</span>
+	    		</div>
+	    		<div class="input-prepend">
+					<i class="iconfont ic-password"></i>
+					<img src="../images/user17.png" />
+	      			<input placeholder="密码" type="password" name="loginPwd" id="loginPwd" autocomplete="new-password"/>
+	      			<span style="display: none;height:25px;line-height:25px;text-align:center;color:red;font-family: '微软雅黑';font-size: 12px;" id="errorMsg"></span>
+	    		</div>
+	    		<span class="regist_btn" id="regist_btn">注册</span>
+	    		<p class="sign-up-msg">点击 “注册” 即表示您同意并愿意遵守简书<br> <a target="_blank" href="http://www.jianshu.com/p/c44d171298ce">用户协议</a> 和 <a target="_blank" href="http://www.jianshu.com/p/2ov8x3">隐私政策</a> 。</p>
+	    	</figure>
+		</form>
+	</body>
+</html>

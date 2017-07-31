@@ -65,6 +65,10 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
+	<!--  --><bean id="register" class="com.igo.action.RegisterAction">
+		<property name="userDAO" ref="userDAO"></property>
+	</bean>
+	
 	<bean id="userBiz" class="com.igo.biz.Impl.UserBizImpl">
 		<property name="userDAO" ref="userDAO"/>
 	</bean>
@@ -107,6 +111,7 @@
 	<bean id="adoptBiz" class="com.igo.biz.Impl.AdoptBizImpl">
 		<property name="adoptDao" ref="adoptDao"></property>
 	</bean>
+	
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">	 

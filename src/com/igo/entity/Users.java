@@ -18,6 +18,16 @@ public class Users implements java.io.Serializable {
 	private String email;
 	private String phone;
 	private String address;
+	private String createtime;
+
+	public String getCreatetime() {
+		return createtime;
+	}
+
+	public void setCreatetime(String createtime) {
+		this.createtime = createtime;
+	}
+
 	private Set adopts = new HashSet(0);
 
 	// Constructors
